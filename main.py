@@ -1,5 +1,10 @@
-from fetch_github import get_user_profile, get_repos, get_language_stats, print_repo_summary
-from analyze_github import (
+from src.github_analyzer.fetch_github import (
+    get_user_profile,
+    get_repos,
+    get_language_stats,
+    print_repo_summary,
+)
+from src.github_analyzer.analyze_github import (
     plot_language_distribution,
     plot_repos_over_time,
     plot_repo_types,
@@ -17,7 +22,6 @@ def main():
 
     df = get_repos()
     print_repo_summary(df)
-
     lang_df = get_language_stats(df)
 
     print("  Generating charts...")
